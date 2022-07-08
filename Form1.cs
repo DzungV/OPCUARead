@@ -36,6 +36,8 @@ namespace OPCUARead
         private void timer1_Tick(object sender, EventArgs e)
         {
             OpcRead();
+            DateTime sensorDateTime = DateTime.Now;
+            txtTimeStamp.Text = sensorDateTime.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         void OpcRead()
@@ -75,11 +77,6 @@ namespace OPCUARead
             byte STT = (byte)opcStt.Value;
             txtStatus.Text = STT.ToString();
 
-            //string tagName = "ns=2;s=Temperature";
-            //Opc.UaFx.OpcValue opcTemp = client.ReadNode(tagName);
-
-            //double temperature = (double)opcTemp.Value;
-            //txtOpcValue.Text = temperature.ToString();
 
 
 
